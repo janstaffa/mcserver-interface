@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "repository": "https://github.com/janstaffa/msa.git",
-  "author": "Jan Šfaffa <agenttupesy@gmail.com>",
+  "author": "janstaffa",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --respawn --clear --rs src/index.ts",

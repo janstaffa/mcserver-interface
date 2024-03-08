@@ -1,8 +1,8 @@
 import { ChildProcessWithoutNullStreams, exec, spawn } from 'child_process';
-import { BACKUP_PATH } from './constants';
+import { BACKUP_PATH, MC_SERVER_NAME } from './constants';
 
 export const shutdown = () => exec('shutdown now');
-export const makeBackupName = (id: string) => 'mechanicalcraft' + id;
+export const makeBackupName = (id: string) => MC_SERVER_NAME + id;
 
 export const createBackup = (
   filename?: string
@@ -14,7 +14,7 @@ export const createBackup = (
   const fullName = `${filename}.tar.gz`;
   return [
     fullName,
-    spawn('tar', ['-zcf', BACKUP_PATH + fullName, 'mechanicalcraft']),
+    spawn('tar', ['-zcf', BACKUP_PATH + fullName, MC_SERVER_NAME]),
   ];
 };
 

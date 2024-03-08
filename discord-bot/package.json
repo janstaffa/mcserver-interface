@@ -1,7 +1,8 @@
 {
-  "name": "mechanical_bot",
+  "name": "mcserver-interface_discordbot",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "janstaffa",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^17.0.8",

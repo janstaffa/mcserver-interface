@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -6,29 +7,28 @@ import { RCON } from 'minecraft-server-util';
 import path from 'path';
 import { createClient } from 'redis';
 import sqlite3 from 'sqlite3';
+import WebSocket from 'ws';
 import {
   BACKUP_PATH,
   DATA_PATH,
+  MC_SERVER_NAME,
   REDIS_PUBLIC_CHANNEL,
   REDIS_URL,
   SERVER_ADDRESS
 } from './constants';
 import { WSMessage } from './types';
-import { CommandPayload } from './types';
 import {
+  Server,
+  ServerStatus,
   createBackup,
   error,
   log,
   makeBackupName,
-  Server,
-  ServerStatus,
   shutdown,
   spawnSyncProcess,
   startMCServerProcess
 } from './util';
 import { initializeWebsocket } from './websocket';
-import WebSocket from 'ws';
-import { exec } from 'child_process';
 
 const createRedisClient = async () => {
   const c = createClient({
@@ -456,7 +456,7 @@ const createRedisClient = async () => {
         await spawnSyncProcess('tar', [
           '-zxf',
           fullPath,
-          'mechanicalcraft',
+          MC_SERVER_NAME,
         ]).catch((e) => {
           throw e;
         });
