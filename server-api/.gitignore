@@ -1,0 +1,8 @@
+.env
+/node_modules
+/dist
+backups.db
+log.txt
+marker_mechanicalcraft.json
+start.sh
+move_markers.sh

@@ -1,0 +1,26 @@
+{
+  "name": "mechanical_bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^17.0.8",
+    "@types/ping": "^0.4.1",
+    "@types/wol": "^1.0.1",
+    "discord.js": "^13.5.1",
+    "dotenv": "^10.0.0",
+    "isomorphic-ws": "^4.0.1",
+    "minecraft-server-util": "^5.2.8",
+    "ping": "^0.4.1",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "wol": "^1.0.7"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --respawn --clear --rs src/index.ts",
+    "build": "tsc"
+  }
+}
